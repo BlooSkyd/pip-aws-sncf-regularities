@@ -24,7 +24,7 @@ cols_to_drop = [
 df_clean = df.drop(columns=cols_to_drop, errors='ignore')
 
 # Renaming columns to facilitate use
-new_columns = {
+new_columns_names = {
     'Year': 'year',
     'Month': 'month',
     'Departure station': 'departure_station',
@@ -46,7 +46,7 @@ new_columns = {
     'Delay due to travellers taken into account': 'delay_cause_travelers'
 }
 
-df_clean = df_clean.rename(columns=new_columns)
+df_clean = df_clean.rename(columns=new_columns_names)
 
 # Remplacing empty values (NaN) by 0
 df_clean = df_clean.fillna(0)
