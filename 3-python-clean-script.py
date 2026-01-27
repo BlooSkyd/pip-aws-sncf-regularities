@@ -62,8 +62,8 @@ df_clean['nb_late_before_15'] = df_clean['nb_late_arr'] - df_clean['nb_late_over
 df_clean = df_clean.round(4)
 
 # Saving cleaned file
-output_filename = 'trains_france_clean.csv'
-df_clean.to_csv(output_filename, index=False)
+output_filename = 'trains_france_clean.parquet'
+df_clean.to_parquet(output_filename, index=False)
 
 # Some math to flex
 org_size = os.path.getsize(file_path)
